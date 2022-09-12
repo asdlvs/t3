@@ -20,7 +20,8 @@ namespace Inmeta.Moving.Services.Models
             {
                 Id = s.ServiceId,
                 IsDone = s.IsDone,
-                PlannedDate = s.PlannedDateTime
+                PlannedDate = s.PlannedDateTime,
+                Name = s.Service?.Name
             }) ?? Enumerable.Empty<OrderService>()).ToList();
 
             CustomerName = dbModel.Customer?.Name;

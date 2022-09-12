@@ -97,6 +97,8 @@ namespace Inmeta.Moving.Services
         {
             var orderDbModels = await _ordersDatabase.Orders
                 .Include(o => o.Customer)
+                .Include(o => o.Services)
+                .ThenInclude(s => s.Service)
                 .Where(o => !o.IsDeleted)
                 .Where(o => o.FromAddress.Contains(text) || o.ToAddress.Contains(text) || o.Customer.Name.Contains(text))
                 .ToListAsync();

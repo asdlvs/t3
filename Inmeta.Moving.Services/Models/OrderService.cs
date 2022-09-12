@@ -6,6 +6,8 @@
 
         public bool IsDone { get; set; }
 
+        public string Name { get;set;}
+
         public DateTime PlannedDate { get; set; }
     }
 }
